@@ -165,3 +165,160 @@ class __PrimeToggleBarState extends State<_PrimeToggleBar> {
     );
   }
 }
+
+class _Results extends StatelessWidget {
+  const _Results({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "RESULTS",
+              style: const TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 8.0),
+                    const _Item(
+                      image: "assets/dot4.png",
+                      title:
+                          "Echo Dot (4th generation) | Smart speaker with Alexa | White",
+                      price: "29,99€",
+                    ),
+                    const SizedBox(height: 8.0),
+                    _Item(
+                      image: "assets/dot3.png",
+                      title:
+                          "Echo Dot (3rd Gen) - Smart speaker with Alexa - Charcoal Fabric",
+                      price: "21,99€",
+                    ),
+                    const SizedBox(height: 8.0),
+                    _Item(
+                      image: "assets/show5.png",
+                      title:
+                          "Echo Show 5 (1st Gen) - Smart speaker with Alexa - Charcoal Fabric",
+                      price: "29,99€",
+                    ),
+                    const SizedBox(height: 8.0),
+                    _Item(
+                      image: "assets/show8.png",
+                      title:
+                          "Echo Show 8 (1st Gen) - Smart speaker with Alexa - Charcoal Fabric",
+                      price: "29,99€",
+                    ),
+                    const SizedBox(height: 8.0),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Item extends StatelessWidget {
+  const _Item({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.price,
+  }) : super(key: key);
+
+  final String image;
+  final String title;
+  final String price;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 350.0,
+      width: double.infinity,
+      color: Colors.white,
+      child: Row(
+        children: [
+          Flexible(
+            flex: 3,
+            child: DecoratedBox(
+              decoration: const BoxDecoration(color: Colors.white),
+              child: Center(
+                child: Image.asset(image, fit: BoxFit.fitWidth),
+              ),
+            ),
+          ),
+          Flexible(
+            flex: 4,
+            child: Container(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                    child: Row(
+                      children: [
+                        const Icon(Icons.star_rate,
+                            color: Color(0xffe39034), size: 20.0),
+                        const Icon(Icons.star_rate,
+                            color: Color(0xffe39034), size: 20.0),
+                        const Icon(Icons.star_rate,
+                            color: Color(0xffe39034), size: 20.0),
+                        const Icon(Icons.star_rate,
+                            color: Color(0xffe39034), size: 20.0),
+                        const Icon(Icons.star_half,
+                            color: Color(0xffe39034), size: 20.0),
+                        const Text("139,406"),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 30.0,
+                    width: 150.0,
+                    color: const Color(0xffb22e1e),
+                    child: Center(
+                      child: const Text(
+                        "Limited time deal",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    price,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                  ),
+                  Text(
+                    "Get it Friday, Sep 3",
+                    style:
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 16.0),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
