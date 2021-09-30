@@ -28,8 +28,8 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _AppBar(),
-          _PrimeToggleBar(),
-          _Results(),
+          const _PrimeToggleBar(),
+          const _Results(),
         ],
       ),
     );
